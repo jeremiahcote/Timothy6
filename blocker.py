@@ -105,6 +105,7 @@ def build_profile(cfg):
     bundle_ids, sites = resolve_blocks(cfg)
     restrictions = {
         "blockedAppBundleIDs": bundle_ids,
+        "blacklistedAppBundleIDs": bundle_ids,  # the same setting's name before iOS 14.5
         "allowAppInstallation": not cfg["block_app_store"],
         "allowExplicitContent": False,
         "allowCloudPrivateRelay": False,
