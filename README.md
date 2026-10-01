@@ -12,8 +12,9 @@ off from your computer over USB.
 - **Apple's built-in adult website filter** as a second layer.
 - **Blocked apps**: the apps on your list are hidden from the phone.
 - **Restrictions**: no iCloud Private Relay, no explicit media, no installing
-  other profiles, no "Erase All Content and Settings". VPNs are allowed by
-  default (`block_vpn`); note that a connected VPN can bypass the DNS filter.
+  other profiles. VPNs are allowed by default (`block_vpn`); note that a
+  connected VPN can bypass the DNS filter. "Erase All Content and Settings"
+  stays available by default as an emergency exit (`block_erase_from_phone`).
 
 The profile is marked non-removable. iOS only honours that on a **supervised**
 iPhone, and only the computer holding the supervision key ("keybag") can
@@ -52,15 +53,18 @@ If `setup` is refused on a phone that is already in use:
 
 ### Supervising without erasing (experimental)
 
-`python supervise_backup.py` backs the phone up, edits the supervision setting
-inside the backup and restores it, so the phone restarts once and keeps its
-data. Run `python blocker.py setup` first to create the keybag.
-`python supervise_backup.py --unsupervise` reverses it the same way.
+`python supervise_backup.py` restores a tiny backup that contains only the
+supervision setting, so the phone restarts once and keeps its data. Run
+`python blocker.py setup` first to create the keybag. Find My must be off
+during the restore.
 
-It has been tested on one iPhone 5, on iOS 8.4 (old backup format) and iOS
-10.3.4 (the Manifest.db format newer iPhones also use). It has not been tested
-on a current iPhone, it restores a full backup, and it does not support
-encrypted backups.
+- `--unsupervise` reverses it the same way.
+- `--dry-run` builds the backup without restoring it.
+- `--full` backs up the whole phone, edits the setting inside that backup and
+  restores it (does not support encrypted backups).
+
+Both methods have been tested on one iPhone 5 (iOS 8.4 and 10.3.4). Neither
+has been tested on a current iPhone. Make a full backup before trying it.
 
 ### Instagram without Reels or Search
 

@@ -44,7 +44,7 @@ DEFAULTS = {
     # Stops a VPN app from tunnelling around the DNS filter.
     "block_vpn": False,
     # Stops wiping the phone from Settings to shed supervision.
-    "block_erase_from_phone": True,
+    "block_erase_from_phone": False,
     # Highest App Store age rating allowed: 1000 = no limit, 300 = 12+
     # (300 hides 17+ apps, which includes third-party browsers, Reddit, X).
     "max_app_rating": 1000,
