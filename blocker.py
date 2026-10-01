@@ -188,7 +188,7 @@ def cmd_enable(_):
         profile = Path(tmp) / "timothy6.mobileconfig"
         profile.write_bytes(build_profile(load_config()))
         if pmd3("profile", "install", profile, "--keybag", KEYBAG).returncode != 0:
-            sys.exit("Failed to install the filter.")
+            sys.exit("Failed to install the filter. If the error says 'NotNow', unlock the phone and retry.")
     print("Filter enabled." if installed() else "Install reported success but the profile is not listed.")
 
 
