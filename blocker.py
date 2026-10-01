@@ -36,7 +36,7 @@ DEFAULTS = {
     "apple_web_filter": True,
     # Apps to hide: names from KNOWN_APPS below, or raw bundle IDs. Each known
     # app's websites are blocked along with it.
-    "blocked_apps": ["reddit", "twitter", "instagram"],
+    "blocked_apps": ["reddit", "twitter", "instagram", "snapchat"],
     # Extra websites to block (needs apple_web_filter).
     "blocked_websites": [],
     # Remove the App Store so no new apps can be downloaded.

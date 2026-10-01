@@ -75,7 +75,8 @@ the Instagram app and use the website in Safari.
 ## Adding apps and websites to block
 
 The block list lives in a `config.json` file next to `blocker.py` on your
-computer. By default it blocks Reddit, Twitter/X and Instagram and their websites.
+computer. By default it blocks Reddit, Twitter/X, Instagram and Snapchat and their
+websites.
 
 ### By asking an AI assistant
 
