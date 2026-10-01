@@ -28,6 +28,24 @@ LEGACY_DOMAIN = "HomeDomain"  # iOS 5-9
 MODERN_DOMAIN = "SysSharedContainerDomain-systemgroup.com.apple.configurationprofiles"
 
 
+# Setup screens for the phone to skip after the restore, so it goes straight
+# back to the home screen and never offers to restore from iCloud (which would
+# overwrite the supervision setting). Same list pymobiledevice3 uses.
+SKIP_SETUP = """
+Location Restore SIMSetup Android AppleID IntendedUser TOS Siri ScreenTime Diagnostics SoftwareUpdate
+Passcode Biometric Payment Zoom DisplayTone MessagingActivationUsingPhoneNumber HomeButtonSensitivity
+CloudStorage ScreenSaver TapToSetup Keyboard PreferredLanguage SpokenLanguage WatchMigration OnBoarding
+TVProviderSignIn TVHomeScreenSync Privacy TVRoom iMessageAndFaceTime AppStore Safety Multitasking
+ActionButton TermsOfAddress AccessibilityAppearance Welcome Appearance RestoreCompleted UpdateCompleted
+WiFi Display Tone LanguageAndLocale TouchID TrueToneDisplay FileVault iCloudStorage iCloudDiagnostics
+Registration DeviceToDeviceMigration UnlockWithWatch Accessibility All ExpressLanguage Language N/A
+Region Avatar DeviceProtection Key LockdownMode Wallpaper PrivacySubtitle SecuritySubtitle DataSubtitle
+AppleIDSubtitle AppearanceSubtitle PreferredLang OnboardingSubtitle AppleTVSubtitle Intelligence
+WebContentFiltering CameraButton AdditionalPrivacySettings EnableLockdownMode OSShowcase
+SafetyAndHandling Tips AgeBasedSafetySettings LiquidGlass
+""".split()
+
+
 def cloud_config(supervised):
     if not supervised:
         config = {
@@ -49,6 +67,7 @@ def cloud_config(supervised):
             "IsSupervised": True,
             "OrganizationName": ORGANIZATION,
             "PostSetupProfileWasInstalled": True,
+            "SkipSetup": SKIP_SETUP,
             "SupervisorHostCertificates": [cert.public_bytes(Encoding.DER)],
         }
     return plistlib.dumps(config, fmt=plistlib.FMT_BINARY)
