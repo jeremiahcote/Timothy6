@@ -43,6 +43,8 @@ DEFAULTS = {
     "block_app_store": False,
     # Stops a VPN app from tunnelling around the DNS filter.
     "block_vpn": False,
+    # Blocks explicit music, podcasts and news in Apple's apps.
+    "block_explicit_music": False,
     # Stops wiping the phone from Settings to shed supervision.
     "block_erase_from_phone": False,
     # Highest App Store age rating allowed: 1000 = no limit, 300 = 12+
@@ -107,7 +109,7 @@ def build_profile(cfg):
         "blockedAppBundleIDs": bundle_ids,
         "blacklistedAppBundleIDs": bundle_ids,  # the same setting's name before iOS 14.5
         "allowAppInstallation": not cfg["block_app_store"],
-        "allowExplicitContent": False,
+        "allowExplicitContent": not cfg["block_explicit_music"],
         "allowCloudPrivateRelay": False,
         "allowVPNCreation": not cfg["block_vpn"],
         "allowEraseContentAndSettings": not cfg["block_erase_from_phone"],

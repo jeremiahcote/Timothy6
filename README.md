@@ -11,8 +11,9 @@ off from your computer over USB.
   cannot switch off. Applies on Wi-Fi and cellular, in every app.
 - **Apple's built-in adult website filter** as a second layer.
 - **Blocked apps**: the apps on your list are hidden from the phone.
-- **Restrictions**: no iCloud Private Relay, no explicit media, no installing
-  other profiles. VPNs are allowed by default (`block_vpn`); note that a
+- **Restrictions**: no iCloud Private Relay, no installing other profiles,
+  films capped at PG-13 and TV at TV-14. Explicit music and podcasts are
+  allowed by default (`block_explicit_music`). VPNs are allowed by default (`block_vpn`); note that a
   connected VPN can bypass the DNS filter. "Erase All Content and Settings"
   stays available by default as an emergency exit (`block_erase_from_phone`).
 
