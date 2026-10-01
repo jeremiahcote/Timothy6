@@ -42,7 +42,7 @@ DEFAULTS = {
     # Remove the App Store so no new apps can be downloaded.
     "block_app_store": False,
     # Stops a VPN app from tunnelling around the DNS filter.
-    "block_vpn": True,
+    "block_vpn": False,
     # Stops wiping the phone from Settings to shed supervision.
     "block_erase_from_phone": True,
     # Highest App Store age rating allowed: 1000 = no limit, 300 = 12+
