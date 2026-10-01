@@ -10,8 +10,10 @@ off from your computer over USB.
 - **Encrypted DNS filter** (CleanBrowsing Adult by default) that the phone
   cannot switch off. Applies on Wi-Fi and cellular, in every app.
 - **Apple's built-in adult website filter** as a second layer.
-- **Restrictions**: no VPN apps, no iCloud Private Relay, no explicit
-  media, no installing other profiles, no "Erase All Content and Settings".
+- **Blocked apps**: the apps on your list are hidden from the phone.
+- **Restrictions**: no iCloud Private Relay, no explicit media, no installing
+  other profiles, no "Erase All Content and Settings". VPNs are allowed by
+  default (`block_vpn`); note that a connected VPN can bypass the DNS filter.
 
 The profile is marked non-removable. iOS only honours that on a **supervised**
 iPhone, and only the computer holding the supervision key ("keybag") can
